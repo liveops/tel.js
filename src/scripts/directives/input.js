@@ -15,7 +15,7 @@ angular.module('teljs')
                     if (attrs.type !== 'tel') {
                         return;
                     }
-                    
+
                     scope.initializeProperties = function() {
                         scope.international = attrs.international;
                         scope.defaultAreaCode = attrs.defaultAreaCode;
@@ -41,7 +41,7 @@ angular.module('teljs')
 
                     scope.formatNumber = function (value) {
                         var result;
-                        if (!angular.isDefined(value) || value === '') {
+                        if (!angular.isDefined(value) || value === null || value === '' ) {
                             return '';
                         }
 
@@ -58,8 +58,8 @@ angular.module('teljs')
                                 });
                             }
                         }
-                        
-                        
+
+
                         return result.number;
                     };
 
@@ -83,7 +83,7 @@ angular.module('teljs')
 
                     ngModel.$formatters.push(scope.formatNumber);
                     ngModel.$parsers.push(scope.parseNumber);
-                    
+
                     scope.initializeProperties();
 
                 }
