@@ -78,8 +78,13 @@ angular.module('teljs')
                         return returnVal;
                     };
 
-                    ngModel.$formatters = [];
-                    ngModel.$parsers = [];
+                    if (angular.isUndefined(ngModel.$formatters)){
+                      ngModel.$formatters = [];
+                    }
+                    
+                    if (angular.isUndefined(ngModel.$parsers)){
+                      ngModel.$parsers = [];
+                    }
 
                     ngModel.$formatters.push(scope.formatNumber);
                     ngModel.$parsers.push(scope.parseNumber);
