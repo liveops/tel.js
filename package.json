@@ -1,5 +1,6 @@
 {
   "name": "tel.js",
+  "version": "1.0.0",
   "branchVersion": "1.0.*",
   "repository": {
     "type": "git",
